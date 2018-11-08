@@ -24,14 +24,13 @@ Feature: Site managers administer groups
       | Katie   | Group 01 | member               | Active            |
       | Jaz     | Group 01 | member               | Pending           |
 
-  @group_sm_01
+  @group_sm_01 @javascript
   Scenario: Create group
     Given I am logged in as "John"
     And I am on "Groups" page
     And I follow "Add Group"
-    When I fill in the following:
-      | Title         | My group       |
-      | Description   | This is a body |
+    And I fill in "Title" with "My group"
+    And I fill in "Description" with "This is a body"
     And I press "Save"
     Then I should see the success message "Group My group has been created"
     And I should see the heading "My group"

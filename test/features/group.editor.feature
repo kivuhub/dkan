@@ -168,7 +168,7 @@ Feature: Editor administer groups
     And I press "Save"
     Then I should see "Resource content1 edited has been updated"
 
-  @group_editor_14
+  @group_editor_14 @javascript
   Scenario: Edit dataset content created by others on group as editor
     Given datasets:
       | title    | publisher | author | published | description |
@@ -176,9 +176,8 @@ Feature: Editor administer groups
     And I am logged in as "Gabriel"
     And I am on "dataset1" page
     When I click "Edit"
-    And I fill in "Title" with "dataset1 edited"
     And I press "Finish"
-    Then I should see "Dataset dataset1 edited has been updated"
+    Then I should see "Dataset dataset1 has been updated"
 
   @group_editor_15
   Scenario: Show correct number of groups to which user belongs
