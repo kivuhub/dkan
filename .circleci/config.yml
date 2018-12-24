@@ -28,9 +28,8 @@ jobs:
             export PATH=$PATH:~/dkan-tools/bin
             cd ~/project
             dktl init
-            ls -lha ~/
+            mv ~/dkan .
             ls -lha ~/project
-            ls -lha ~/dkan
             # dktl make
             # dktl drush site-install -y --notify
             # ls -lha
