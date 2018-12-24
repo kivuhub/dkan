@@ -29,15 +29,14 @@ jobs:
             cd ~/project
             dktl init
             ln -s ../dkan dkan
-            dktl dkan:make
-            dktl drupal:make
+            dktl make
             dktl drush site-install -y --notify
             ls -lha
       - run:
           name: Run tests
           command: |
             export PATH=$PATH:~/dkan-tools/bin
-            dktl test:phpunit
+            dktl test:behat
 
 
 
