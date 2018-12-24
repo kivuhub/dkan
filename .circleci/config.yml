@@ -35,7 +35,18 @@ jobs:
           name: Run tests
           command: |
             export PATH=$PATH:~/dkan-tools/bin
-            dktl test:behat
+            bash -c "
+            dktl test:behat --tags=@dataset_rest_api_01
+            dktl dc exec cli mkdir /var/www/dkan/test/assets
+            if [ -z \"$(dktl dc exec cli ls -A /var/www/dkan/test/assets)\" ]; then
+              echo \"Tests Passed\"
+              exit 0
+            else
+              echo \"Tests Failed\" >&2
+              exit 1
+            fi
+            "
+
 
 
 
