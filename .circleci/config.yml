@@ -28,15 +28,17 @@ jobs:
             export PATH=$PATH:~/dkan-tools/bin
             cd ~/project
             dktl init
-            ln -s ../dkan dkan
-            dktl make
-            dktl drush site-install -y --notify
-            ls -lha
+            ls -lha ~/
+            ls -lha ~/project
+            ls -lha ~/dkan
+            # dktl make
+            # dktl drush site-install -y --notify
+            # ls -lha
       - run:
           name: Run tests
           command: |
-            export PATH=$PATH:~/dkan-tools/bin
-            dktl test:behat
+            # export PATH=$PATH:~/dkan-tools/bin
+            # dktl test:behat
 
 
 
