@@ -30,7 +30,7 @@ jobs:
             dktl init
             mv ~/dkan .
             ls -lha ~/project
-            # dktl make
+            dktl make
             # dktl drush site-install -y --notify
             # ls -lha
       - run:
