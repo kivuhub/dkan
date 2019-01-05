@@ -20,8 +20,6 @@ jobs:
             cd ~
             git clone -b exit https://github.com/GetDKAN/dkan-tools.git
             chmod 777 ./dkan-tools/bin/dktl
-            export PATH=$PATH:~/dkan-tools/bin
-            which dktl
       - run:
           name: Install site
           command: |
@@ -31,6 +29,7 @@ jobs:
             mv ~/dkan .
             dktl make
             dktl drush site-install -y
+            echo "Ignore errors during install."
       - run:
           name: Run tests
           command: |
