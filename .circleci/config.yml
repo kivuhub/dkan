@@ -18,7 +18,7 @@ jobs:
           name: Install DKTL
           command: |
             cd ~
-            git clone https://github.com/GetDKAN/dkan-tools.git
+            git clone -b test https://github.com/GetDKAN/dkan-tools.git
             chmod 777 ./dkan-tools/bin/dktl
             export PATH=$PATH:~/dkan-tools/bin
             which dktl
@@ -35,10 +35,8 @@ jobs:
           name: Run tests
           command: |
             export PATH=$PATH:~/dkan-tools/bin
-            bash -c "
-              echo \"Tests Failed\" >&2
-              exit 1
-            "
+            dktl test:behat
+
 
 
 
