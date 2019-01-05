@@ -28,8 +28,11 @@ jobs:
             dktl init
             mv ~/dkan .
             dktl make
+            bash -c "
             dktl drush site-install -y
-            echo "Ignore errors during install."
+            exit 0
+            "
+
       - run:
           name: Run tests
           command: |
