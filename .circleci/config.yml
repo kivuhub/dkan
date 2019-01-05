@@ -18,7 +18,7 @@ jobs:
           name: Install DKTL
           command: |
             cd ~
-            git clone -b test https://github.com/GetDKAN/dkan-tools.git
+            git clone -b exit https://github.com/GetDKAN/dkan-tools.git
             chmod 777 ./dkan-tools/bin/dktl
             export PATH=$PATH:~/dkan-tools/bin
             which dktl
@@ -30,7 +30,7 @@ jobs:
             dktl init
             mv ~/dkan .
             dktl make
-            dktl drush site-install -y --notify
+            dktl drush site-install -y
       - run:
           name: Run tests
           command: |
